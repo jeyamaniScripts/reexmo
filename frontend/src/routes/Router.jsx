@@ -6,12 +6,13 @@ import EditEmployee from "../pages/EditEmployee";
 import DeleteEmployee from "../pages/DeleteEmployee";
 import EmployeeList from "../pages/EmployeeList";
 import { createBrowserRouter } from "react-router-dom";
+import PageNotFound from "../pages/PageNotFound";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <AppLayout />,
-    Children: [
+    children: [
       {
         index: true,
         element: <EmployeeList />,
@@ -33,7 +34,8 @@ const router = createBrowserRouter([
         element: <DeleteEmployee />,
       },
       {
-        path: "/",
+        path: "*",
+        element: <PageNotFound />,
       },
     ],
   },
